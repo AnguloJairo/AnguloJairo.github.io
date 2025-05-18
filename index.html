@@ -3,58 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jairo Angulo | Portafolio</title>
+    <title>Jairo Angulo | Portafolio Académico</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --neon-pink: #ff2a6d;
-            --neon-blue: #05d9e8;
-            --deep-purple: #8900f2;
-            --dark-blue: #0d0221;
-            --electric-purple: #d300c5;
+            --epn-red: #CC0000;
+            --epn-dark: #1A1A1A;
+            --epn-light: #F8F9FA;
+            --accent-blue: #0056b3;
+            --accent-orange: #FF6B35;
         }
         
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: var(--dark-blue);
-            color: white;
-            background-image: 
-                radial-gradient(circle at 10% 20%, var(--deep-purple) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, var(--neon-pink) 0%, transparent 20%);
-            background-attachment: fixed;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--epn-light);
+            color: var(--epn-dark);
+            line-height: 1.6;
         }
         
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, h5 {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            font-weight: 700;
         }
         
-        .header {
-            margin-bottom: 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: "";
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            right: -50px;
-            bottom: -50px;
-            background: linear-gradient(45deg, 
-                var(--neon-pink) 0%, 
-                var(--electric-purple) 50%, 
-                var(--neon-blue) 100%);
-            z-index: -1;
-            filter: blur(60px);
-            opacity: 0.3;
+        .epn-header {
+            background-color: var(--epn-red);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
         .profile-img {
@@ -63,113 +45,80 @@
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid white;
-            box-shadow: 0 0 20px var(--neon-blue),
-                        0 0 40px var(--neon-pink);
-        }
-        
-        .social-icons a {
-            color: white;
-            margin: 0 15px;
-            font-size: 1.8rem;
-            transition: all 0.3s;
-            text-shadow: 0 0 5px currentColor;
-        }
-        
-        .social-icons a:hover {
-            color: var(--neon-blue);
-            transform: translateY(-5px);
-            text-shadow: 0 0 15px var(--neon-blue);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         
         .section-title {
-            position: relative;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-            color: var(--neon-blue);
-        }
-        
-        .section-title::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 70px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
-            box-shadow: 0 0 10px var(--neon-blue);
+            color: var(--epn-red);
+            border-bottom: 3px solid var(--epn-red);
+            padding-bottom: 8px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
         }
         
         .card {
-            background: rgba(13, 2, 33, 0.7);
             border: none;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 25px rgba(5, 217, 232, 0.2);
-            transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: white;
-            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--epn-red);
         }
         
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(255, 42, 109, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .lab-card {
+            background-color: var(--epn-dark);
+            color: white;
+        }
+        
+        .interest-badge {
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            display: inline-block;
+            font-size: 0.85rem;
         }
         
         .skill-badge {
-            background: linear-gradient(45deg, var(--deep-purple), var(--electric-purple));
-            color: white;
-            padding: 8px 15px;
-            border-radius: 25px;
-            margin-right: 10px;
-            margin-bottom: 12px;
+            background-color: var(--epn-light);
+            color: var(--epn-dark);
+            border: 1px solid #ddd;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 8px;
             display: inline-block;
-            font-size: 0.9rem;
-            box-shadow: 0 0 10px rgba(137, 0, 242, 0.5);
-            transition: all 0.3s;
+            font-size: 0.85rem;
         }
         
-        .skill-badge:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(137, 0, 242, 0.8);
+        .contact-info {
+            margin-bottom: 1rem;
         }
         
-        .project-img {
-            height: 200px;
-            object-fit: cover;
-            border-radius: 15px 15px 0 0;
-            filter: grayscale(30%);
-            transition: all 0.5s;
+        .contact-info i {
+            color: var(--epn-red);
+            width: 24px;
+            text-align: center;
+            margin-right: 8px;
         }
         
-        .card:hover .project-img {
-            filter: grayscale(0%);
+        footer {
+            background-color: var(--epn-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
         }
         
-        .btn-neon {
-            background: transparent;
-            color: var(--neon-blue);
-            border: 2px solid var(--neon-blue);
-            border-radius: 30px;
-            padding: 8px 25px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            text-shadow: 0 0 5px var(--neon-blue);
-            box-shadow: 0 0 10px var(--neon-blue);
-        }
-        
-        .btn-neon:hover {
-            background: var(--neon-blue);
-            color: var(--dark-blue);
-            box-shadow: 0 0 20px var(--neon-blue),
-                        0 0 40px var(--neon-blue);
-        }
-        
-        .text-neon-pink {
-            color: var(--neon-pink);
-            text-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
+        .publication-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
         }
         
         .timeline {
@@ -180,19 +129,16 @@
         .timeline::before {
             content: "";
             position: absolute;
-            left: 5px;
+            left: 7px;
             top: 0;
             bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom, 
-                var(--neon-pink), 
-                var(--electric-purple), 
-                var(--neon-blue));
+            width: 2px;
+            background-color: var(--epn-red);
         }
         
         .timeline-item {
             position: relative;
-            padding-bottom: 30px;
+            padding-bottom: 25px;
         }
         
         .timeline-item::before {
@@ -200,155 +146,209 @@
             position: absolute;
             left: -30px;
             top: 5px;
-            width: 15px;
-            height: 15px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
-            background: var(--neon-blue);
-            box-shadow: 0 0 10px var(--neon-blue);
-        }
-        
-        footer {
-            background: rgba(13, 2, 33, 0.8);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-        
-        /* Efecto de texto neón */
-        .neon-text {
-            animation: flicker 1.5s infinite alternate;
-        }
-        
-        @keyframes flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-                text-shadow:
-                    0 0 5px #fff,
-                    0 0 10px #fff,
-                    0 0 20px var(--neon-blue),
-                    0 0 40px var(--neon-blue),
-                    0 0 60px var(--neon-blue);
-            }
-            20%, 24%, 55% {        
-                text-shadow: none;
-            }
+            background-color: var(--epn-red);
+            border: 3px solid white;
         }
     </style>
 </head>
 <body>
-    <div class="container my-5">
-        <!-- Header con foto y nombre -->
-        <header class="header text-center py-5">
-            <img src="https://via.placeholder.com/180" alt="Foto de Jairo Angulo" class="profile-img mb-4">
-            <h1 class="neon-text mb-3">JAIRO ANGULO</h1>
-            <p class="fs-4 text-neon-pink">DESARROLLADOR FULL STACK</p>
-            <div class="social-icons mt-4">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="mailto:tuemail@ejemplo.com"><i class="fas fa-envelope"></i></a>
+    <!-- Header -->
+    <header class="epn-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center">
+                    <img src="https://via.placeholder.com/180" alt="Jairo Angulo" class="profile-img mb-3">
+                </div>
+                <div class="col-md-9">
+                    <h1>Jairo Angulo</h1>
+                    <p class="lead mb-1">Estudiante de la Escuela Politécnica Nacional</p>
+                    <p class="mb-0">Investigación en Inteligencia Artificial y Visión por Computadora</p>
+                </div>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <!-- Sección de información -->
-        <div class="row mt-5">
+    <div class="container">
+        <div class="row">
             <!-- Columna izquierda -->
             <div class="col-lg-4">
-                <section class="card p-4">
-                    <h2 class="section-title"><i class="fas fa-user me-2"></i>SOBRE MÍ</h2>
-                    <p>Desarrollador especializado en crear soluciones digitales impactantes con tecnología de vanguardia. Apasionado por el diseño UI/UX y la eficiencia en el código.</p>
-                    <div class="mt-4">
-                        <h5 class="text-neon-pink mb-3">CONTACTO</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-envelope me-2 text-neon-pink"></i> jairo@ejemplo.com</li>
-                            <li class="mb-2"><i class="fas fa-phone me-2 text-neon-pink"></i> +123 456 7890</li>
-                            <li><i class="fas fa-map-marker-alt me-2 text-neon-pink"></i> Ciudad, País</li>
-                        </ul>
+                <!-- Información de contacto -->
+                <section class="card p-4 mb-4">
+                    <h2 class="section-title">Contacto</h2>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i> jairo.angulo@epn.edu.ec
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i> Oficina 404, Edificio 20
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-university"></i> Campus Politécnico "José Rubén Orellana"
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-city"></i> Quito, Ecuador
+                    </div>
+                    <hr>
+                    <div class="text-center mt-3">
+                        <a href="#" class="btn btn-outline-dark me-2"><i class="fab fa-github"></i></a>
+                        <a href="#" class="btn btn-outline-primary me-2"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="btn btn-outline-info me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-danger"><i class="fab fa-google-scholar"></i></a>
                     </div>
                 </section>
 
-                <section class="card p-4">
-                    <h2 class="section-title"><i class="fas fa-graduation-cap me-2"></i>EDUCACIÓN</h2>
+                <!-- Educación -->
+                <section class="card p-4 mb-4">
+                    <h2 class="section-title">Educación</h2>
                     <div class="timeline">
                         <div class="timeline-item">
-                            <h5>INGENIERÍA EN SISTEMAS</h5>
-                            <p class="text-muted">Universidad Tecnológica (2018-2022)</p>
+                            <h5>Escuela Politécnica Nacional</h5>
+                            <p class="text-muted mb-1">Ingeniería en Sistemas Informáticos</p>
+                            <p class="text-muted"><small>2019 - Presente</small></p>
                         </div>
                         <div class="timeline-item">
-                            <h5>BOOTCAMP FULL STACK</h5>
-                            <p class="text-muted">Coding Academy (2020)</p>
+                            <h5>Bootcamp Inteligencia Artificial</h5>
+                            <p class="text-muted mb-1">EPN - DataLab</p>
+                            <p class="text-muted"><small>2022</small></p>
                         </div>
                     </div>
                 </section>
 
-                <section class="card p-4">
-                    <h2 class="section-title"><i class="fas fa-code me-2"></i>HABILIDADES</h2>
+                <!-- Intereses -->
+                <section class="card p-4 mb-4">
+                    <h2 class="section-title">Intereses</h2>
                     <div>
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">JavaScript</span>
-                        <span class="skill-badge">React</span>
-                        <span class="skill-badge">Flask</span>
-                        <span class="skill-badge">Node.js</span>
-                        <span class="skill-badge">HTML5/CSS3</span>
-                        <span class="skill-badge">Bootstrap</span>
-                        <span class="skill-badge">Git</span>
-                        <span class="skill-badge">MongoDB</span>
-                        <span class="skill-badge">SQL</span>
-                        <span class="skill-badge">Docker</span>
+                        <span class="interest-badge">Redes Neuronales</span>
+                        <span class="interest-badge">Métodos Numéricos</span>
+                        <span class="interest-badge">Algoritmos</span>
+                        <span class="interest-badge">Visión por Computadora</span>
+                        <span class="interest-badge">IA Interpretable</span>
+                        <span class="interest-badge">Microcontroladores</span>
+                        <span class="interest-badge">Robótica</span>
+                        <span class="interest-badge">Cambio Climático</span>
+                        <span class="interest-badge">Juegos de Mesa</span>
                     </div>
                 </section>
             </div>
 
             <!-- Columna derecha -->
             <div class="col-lg-8">
-                <section class="card p-4">
-                    <h2 class="section-title"><i class="fas fa-briefcase me-2"></i>EXPERIENCIA</h2>
+                <!-- Experiencia -->
+                <section class="card p-4 mb-4">
+                    <h2 class="section-title">Experiencia</h2>
                     <div class="timeline">
-                        <div class="timeline-item mb-4">
-                            <h4>DESARROLLADOR FULL STACK</h4>
-                            <p class="text-neon-pink mb-2">Tech Innovations | 2021 - Presente</p>
+                        <div class="timeline-item">
+                            <div class="d-flex justify-content-between">
+                                <h4>Asistente de Investigación</h4>
+                                <span class="badge bg-danger">Actual</span>
+                            </div>
+                            <h5>Ecuadorean Artificial Intelligence and Computer Vision Lab</h5>
+                            <p class="text-muted mb-2">Escuela Politécnica Nacional | 2022 - Presente</p>
                             <ul>
-                                <li>Lideré el desarrollo de 3 aplicaciones web con Python/Flask y React</li>
-                                <li>Optimicé el rendimiento reduciendo los tiempos de carga en un 40%</li>
-                                <li>Implementé sistemas de autenticación segura JWT</li>
+                                <li>Investigación en interpretabilidad mecanicista de modelos de IA</li>
+                                <li>Desarrollo de algoritmos para visión por computadora</li>
+                                <li>Implementación de redes neuronales profundas</li>
+                                <li>Colaboración en publicaciones científicas</li>
                             </ul>
                         </div>
-                        <div class="timeline-item mb-4">
-                            <h4>DESARROLLADOR FRONTEND</h4>
-                            <p class="text-neon-pink mb-2">Digital Solutions | 2019 - 2021</p>
+                        <div class="timeline-item">
+                            <h4>Asistente Docente</h4>
+                            <h5>Departamento de Informática</h5>
+                            <p class="text-muted mb-2">Escuela Politécnica Nacional | 2021 - 2022</p>
                             <ul>
-                                <li>Desarrollé interfaces de usuario con React y Bootstrap</li>
-                                <li>Colaboré en el diseño de 5 aplicaciones móviles híbridas</li>
-                                <li>Participé en sprints ágiles con equipo multidisciplinario</li>
+                                <li>Apoyo en cursos de Algoritmos y Estructuras de Datos</li>
+                                <li>Desarrollo de material didáctico para métodos numéricos</li>
+                                <li>Tutorías personalizadas para estudiantes</li>
                             </ul>
                         </div>
                     </div>
                 </section>
 
-                <section class="card p-4">
-                    <h2 class="section-title"><i class="fas fa-project-diagram me-2"></i>PROYECTOS</h2>
+                <!-- Investigación -->
+                <section class="card p-4 mb-4">
+                    <h2 class="section-title">Investigación Actual</h2>
+                    <div class="lab-card card p-4 mb-4">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="https://via.placeholder.com/150x150/CC0000/FFFFFF?text=EPN" alt="Lab Logo" class="img-fluid">
+                            </div>
+                            <div class="col-md-9">
+                                <h4>Ecuadorean AI and Computer Vision Lab</h4>
+                                <p>Visite mi perfil en el <a href="#" class="text-white">sitio web de nuestro laboratorio</a> para más información sobre nuestros proyectos en curso.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="mt-4">Doctorado en Interpretabilidad Mecanicista de IA</h4>
+                    <p>Actualmente investigo enfoques para hacer más transparentes los modelos de aprendizaje profundo, centrándome en:</p>
+                    <ul>
+                        <li>Análisis de capas y neuronas en redes profundas</li>
+                        <li>Métodos para visualizar procesos de toma de decisiones</li>
+                        <li>Aplicaciones en visión por computadora</li>
+                        <li>Intersección entre IA y filosofía de la mente</li>
+                    </ul>
+                    
+                    <h4 class="mt-4">Áreas de Especialización</h4>
                     <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <div class="card h-100">
-                                <img src="https://via.placeholder.com/300x200/0d0221/05d9e8?text=Proyecto+1" class="project-img" alt="Proyecto 1">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title">SISTEMA DE ANALÍTICA</h5>
-                                    <p class="card-text">Plataforma de análisis de datos con visualizaciones interactivas.</p>
-                                    <a href="#" class="btn btn-neon mt-3">Ver Demo</a>
+                                    <h5><i class="fas fa-brain text-danger me-2"></i>Aprendizaje Automático</h5>
+                                    <ul class="mb-0">
+                                        <li>Redes Neuronales</li>
+                                        <li>Algoritmos de Optimización</li>
+                                        <li>Procesamiento de Señales</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="card h-100">
-                                <img src="https://via.placeholder.com/300x200/0d0221/ff2a6d?text=Proyecto+2" class="project-img" alt="Proyecto 2">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title">APP DE TAREAS</h5>
-                                    <p class="card-text">Aplicación de productividad con sincronización en la nube.</p>
-                                    <a href="#" class="btn btn-neon mt-3">Código Fuente</a>
+                                    <h5><i class="fas fa-calculator text-danger me-2"></i>Métodos Numéricos</h5>
+                                    <ul class="mb-0">
+                                        <li>Resolución de Ecuaciones</li>
+                                        <li>Algoritmos Matriciales</li>
+                                        <li>Optimización Numérica</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="text-center mt-3">
-                        <a href="#" class="btn btn-neon">Ver Todos los Proyectos</a>
+                </section>
+
+                <!-- Habilidades -->
+                <section class="card p-4 mb-4">
+                    <h2 class="section-title">Habilidades Técnicas</h2>
+                    <div class="mb-4">
+                        <h5>Lenguajes de Programación</h5>
+                        <div>
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">C++</span>
+                            <span class="skill-badge">MATLAB</span>
+                            <span class="skill-badge">R</span>
+                            <span class="skill-badge">Java</span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h5>Frameworks de IA</h5>
+                        <div>
+                            <span class="skill-badge">TensorFlow</span>
+                            <span class="skill-badge">PyTorch</span>
+                            <span class="skill-badge">Keras</span>
+                            <span class="skill-badge">OpenCV</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>Otras Tecnologías</h5>
+                        <div>
+                            <span class="skill-badge">Git</span>
+                            <span class="skill-badge">LaTeX</span>
+                            <span class="skill-badge">Docker</span>
+                            <span class="skill-badge">Arduino</span>
+                            <span class="skill-badge">Raspberry Pi</span>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -356,8 +356,11 @@
     </div>
 
     <!-- Footer -->
-    <footer class="text-center py-4">
-        <p class="mb-0">© 2023 <span class="text-neon-pink">Jairo Angulo</span>. Todos los derechos reservados.</p>
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2023 Jairo Angulo - Escuela Politécnica Nacional</p>
+            <p class="mb-0"><small>Todos los derechos reservados</small></p>
+        </div>
     </footer>
 
     <!-- Bootstrap JS -->
